@@ -134,6 +134,10 @@ public class TaskProgressViewSkin<T extends Task<?>> extends
 
             if (empty || task == null) {
                 getStyleClass().setAll("task-list-cell-empty");
+                progressBar.progressProperty().unbind();
+                titleText.textProperty().unbind();
+                messageText.textProperty().unbind();
+                cancelButton.disableProperty().unbind();
                 setGraphic(null);
             } else if (task != null) {
                 getStyleClass().setAll("task-list-cell");
